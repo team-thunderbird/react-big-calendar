@@ -37,7 +37,7 @@ function TimeGridEvent(props) {
       {label}
     </div>,
     <div key="2" className="rbc-event-content">
-      {Event ? <Event event={event} title={title} /> : title}
+      {Event ? <Event continuesPrior={continuesPrior} continuesAfter={continuesAfter} event={event} title={title} /> : title}
     </div>,
   ]
 
