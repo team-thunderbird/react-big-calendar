@@ -1,6 +1,6 @@
 {
   "name": "@team-thunderbird/react-big-calendar",
-  "version": "0.1.0",
+  "version": "0.1.3",
   "description": "Calendar! with events",
   "author": {
     "name": "Jason Quense",
@@ -10,8 +10,12 @@
     "type": "git",
     "url": "git+https://github.com/team-thunderbird/react-big-calendar.git"
   },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
   "license": "MIT",
   "main": "lib/index.js",
+  "types": "lib/index.d.ts",
   "module": "dist/react-big-calendar.esm.js",
   "style": "lib/css/react-big-calendar.css",
   "files": [
@@ -31,6 +35,7 @@
   ],
   "scripts": {
     "build": "zx .scripts/build.mjs",
+    "postbuild": "cp ./src/index.d.ts ./lib",
     "build-storybook": "build-storybook",
     "lint": "NODE_ENV=development eslint src test",
     "prepare": "is-ci || husky install",
